@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{%block title%} Lista de Contatos {%endblock%}
+{% block main %}
+    <h1>Lista de Contatos</h1>
+    <ul>
+        {% for contato in contatos %}
+
+            <li>{{ contato.nome }} <a href="{%url 'atualizar_contato' contato.id %}">Editar</a> </li>
+
+        {% endfor %}
+    </ul>
+
+    <br>
+
+    <a href="{% url 'adicionar_contato' %}" class="btn btn-primary">Novo Contato</a>
+
+
+{% endblock %}
