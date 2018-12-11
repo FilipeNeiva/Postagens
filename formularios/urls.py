@@ -20,6 +20,7 @@ from contatos.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('<int:id>', postagens, name = "postagens"),
+    path('', postagens, name = "postagens"),
     path('contatos', listar_contatos, name = "lista_contatos"),
     path('adicionar', novo_contato, name = "adicionar_contato"),
     path('atualizar/<int:id>/', atualizar_contato, name = "atualizar_contato"),

@@ -29,14 +29,18 @@ def atualizar_contato(request, id):
     return render(request,'formulario_contato.html', {'form' : form})
 
 
-def postagens(request, id):
-    formPost = FormularioPost(request.POST or None)
-    usuarioLogado = get_object_or_404(Usuario, pk=id)
+def postagens(request, id = None):
+    if id == None:
+        return render(request, 'login.html')
 
-    if formPost.is_valid():
-        post = formPost.save(commit=False)
-        post.autor = usuarioLogado
-        post.save()
-        return redirect('postagens', usuarioLogado.id)
+    else:
+        formPost = FormularioPost(request.POST or None)
+        usuarioLogado = get_object_or_404(Usuario, pk=id)
 
-    return render(request, 'index.html', {'form': formPost}, {'usuarioLogado' : usuarioLogado})
+        if formPost.is_valid():
+            post = formPost.save(commit=False)
+            post.autor = usuarioLogado
+            post.save()
+            return redirect('postagens', usuarioLogado.id)
+
+        return render(request, 'index.html', {'form': formPost}, {'usuarioLogado': usuarioLogado})

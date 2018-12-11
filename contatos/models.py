@@ -10,6 +10,7 @@ class Usuario(models.Model):
     nome = models.CharField(max_length= 30)
     sobrenome = models.CharField(max_length = 30)
     email = models.CharField(max_length = 50)
+    senha = models.CharField(max_length=50, default='123')
 
     def __str__(self):
         return self.nome + ' ' + self.sobrenome

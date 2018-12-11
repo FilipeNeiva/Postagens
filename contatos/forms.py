@@ -1,10 +1,11 @@
-from django.forms import ModelForm, widgets, Textarea
+from django.forms import ModelForm, widgets, Textarea, PasswordInput
 from .models import *
 
 class FormularioContato(ModelForm):
     class Meta:
         model = Usuario
-        fields = ['nome','sobrenome','email']
+        fields = ['nome','sobrenome','email', 'senha']
+        widgets = {'senha': PasswordInput}
 
 class FormularioPost(ModelForm):
     class Meta:
