@@ -5,7 +5,6 @@
 {% block main %}
 
 
-
     <h1>Publique algo</h1>
     <form method="POST">
         {% csrf_token %}
@@ -15,6 +14,13 @@
     </form>
 
     <hr/>
+    <h2>Bostagens</h2>
+    {% for post in posts %}
+        {{post.texto}}<a href="{% url 'excluir_postagem' post.id %}"> Apagar</a> <br/><hr>
+    {% endfor %}
+
+
+
 
 
 

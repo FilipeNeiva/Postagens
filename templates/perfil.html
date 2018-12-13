@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{%block title%} Formulario {%endblock%}
+{% block main %}
+    <h1>{{perfil.nome}}</h1>
+
+    <hr/>
+
+    <h2>Bostagens</h2>
+    {% for post in posts %}
+        {{post.texto}}<br/><hr>
+    {% endfor %}
+
+
+{% endblock %}

@@ -6,14 +6,16 @@
     <ul>
         {% for contato in contatos %}
 
-            <li>{{ contato.nome }} <a href="{%url 'atualizar_contato' contato.id %}">Editar</a> </li>
+            <li><a href="{% url 'perfil' contato.id %}">{{ contato.nome }}<a/> <a href="{%url 'atualizar_contato' contato.id %}">Editar</a> <a href="{%url 'convidar' contato.id %}">Convidar</a> </li>
+
 
         {% endfor %}
+
     </ul>
 
     <br>
 
-    <a href="{% url 'adicionar_contato' %}" class="btn btn-primary">Novo Contato</a>
+    <!--<a href="{% url 'adicionar_contato' %}" class="btn btn-primary">Novo Contato</a>-->
 
 
 {% endblock %}

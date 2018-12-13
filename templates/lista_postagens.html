@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{%block title%} Formulario {%endblock%}
+{% block main %}
+    <h1>Posts</h1>
+    {% for post in posts %}
+        {{post.texto}} <br/>
+    {% endfor %}
+
+
+{% endblock %}

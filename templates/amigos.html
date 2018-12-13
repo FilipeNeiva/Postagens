@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{%block title%} Lista de Contatos {%endblock%}
+{% block main %}
+ <h1>Convites</h1>
+    {% for convite in convites%}
+        {{convite.solicitante.nome}} <a href="{% url 'aceitar' convite.id %}">Aceitar </a><a href="#">Recusar</a> <br>
+    {% endfor %}
+
+<h1><br><br>Amigos</h1>
+
+    {% for amigo in amigos %}
+        {{ amigo.nome }} <br>
+    {% endfor %}
+
+{% endblock %}

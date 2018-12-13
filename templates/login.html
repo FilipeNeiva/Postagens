@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{%block title%} Formulario {%endblock%}
+{% block main %}
+<div class="container">
+
+
+<div class="container">
+<h1 class="form-heading">login</h1>
+<div class="login-form">
+<div class="main-div">
+    <div class="panel">
+   <p>Digite seu e-mail e senha</p>
+   </div>
+    <form id="Login">
+
+        <div class="form-group">
+
+
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+
+        </div>
+        <div class="forgot">
+        <a href="{%url 'adicionar_contato'%}">Cadastrar-se</a>
+</div>
+        <button type="submit" class="btn btn-primary">Login</button>
+
+    </form>
+    </div>
+</div></div></div>
+
+
+
+
+    </div>
+
+{% endblock %}
